@@ -74,7 +74,7 @@ public class DAO {
      */
 	 public static Collection<Player> getAllById() {
 	    	
-	    	TreeMap<Integer, Player> sortedPlayersById = new TreeMap<Integer, Player>(PLAYERS);
+		 TreeMap<Integer, Player> sortedPlayersById = new TreeMap<Integer, Player>(PLAYERS);
 			
 	    	return sortedPlayersById.values();
 
@@ -84,7 +84,7 @@ public class DAO {
 	  * Returns a sorted map of the players by name.
 	  * @return Collection - sorted map by name.
 	  */
-     public static Collection<Player> getAllByName() {
+     public static List<Player> getAllByName() {
 	   
     	List<Player> sortedPlayersByName = new ArrayList<Player>(PLAYERS.values());
     	Collections.sort(sortedPlayersByName, Player.PlayerNameComparator);
