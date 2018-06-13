@@ -1,7 +1,6 @@
 package com.rest.classes;
-import java.util.Comparator;
 
-import javax.annotation.Nullable;
+import java.util.Comparator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -10,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * @author Nofar Montecchio
  *
  */
-public class Player {
+public class Player{
 
 	
 	private int id;
@@ -68,11 +67,16 @@ public class Player {
 	   String playerName2 = p2.getName().toUpperCase();
 
 	   //ascending order
-	   return playerName1.compareTo(playerName2);
+	   int x= playerName1.compareTo(playerName2);
+	   if(x!=0)
+		   return x;
+	   return 1;
 
 	   //descending order
 	   //return playerName2.compareTo(playerName1);
       }
     };
+
+	
  
 }

@@ -2,10 +2,11 @@ package com.rest.dao;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -80,16 +81,21 @@ public class DAO {
 
 	    }
     
-	 /**
-	  * Returns a sorted map of the players by name.
-	  * @return Collection - sorted map by name.
+	 
+     /**
+	  * Returns a sorted set of the players by name.
+	  * @return Collection - sorted set by name.
 	  */
-     public static List<Player> getAllByName() {
-	   
-    	List<Player> sortedPlayersByName = new ArrayList<Player>(PLAYERS.values());
-    	Collections.sort(sortedPlayersByName, Player.PlayerNameComparator);
-		
-    	return sortedPlayersByName;
+     public static Collection<Player> getAllByName() {
+    
+    	 
+    	 List<Player> li = new ArrayList<Player>(PLAYERS.values());
+    	 TreeSet<Player> myset = new TreeSet<Player>(Player.PlayerNameComparator);
+    	 myset.addAll(li);
+    	 
+    	 
+    	return myset;
 
     }
+     
 }

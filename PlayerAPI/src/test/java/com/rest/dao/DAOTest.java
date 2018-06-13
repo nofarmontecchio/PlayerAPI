@@ -25,11 +25,7 @@ public class DAOTest {
 	        
 	}
 	 
-    @Test
-    public void testGetAllByName() {
-        assertEquals("iniesta", DAO.getAllByName().get(0).getName());
-        
-    }
+
 
     @Test
     public void testGetAllById() {
@@ -37,6 +33,11 @@ public class DAOTest {
         
     }
     
+    @Test
+    public void testGetAllByName() {
+        assertEquals("iniesta", DAO.getAllByName().stream().findFirst().get().getName());
+        
+    }
     
     @Test
     public void testAddPlayer() {
